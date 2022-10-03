@@ -9,8 +9,8 @@ function createLine(data){
         "        <th class=\"description\">" + data[2] + "</th>\n" +
         "        <th class=\"date\">" + data[3] + "</th>\n" +
         "        <th scope=\"col\" style=\"display: flex; justify-content: space-around\">\n" +
-        "            <i class=\"fa fa-wrench\" aria-hidden=\"true\"></i>\n" +
-        "            <i class=\"fa fa-trash\" aria-hidden=\"true\"></i>\n" +
+        "            <p class=\"change\">Изменить</p>\n" +
+        "            <p class=\"delete\">Удалить</p>\n" +
         "        </th>\n" +
         "    </tr>"
     return div.firstChild
@@ -24,8 +24,8 @@ function createLineWithCase(data){
         "        <th class=\"description\">" + data["description"] + "</th>\n" +
         "        <th class=\"date\">" + data["date"] + "</th>\n" +
         "        <th scope=\"col\" style=\"display: flex; justify-content: space-around\">\n" +
-        "            <i class=\"fa fa-wrench\" aria-hidden=\"true\"></i>\n" +
-        "            <i class=\"fa fa-trash\" aria-hidden=\"true\"></i>\n" +
+        "            <p class=\"change\">Изменить</p>\n" +
+        "            <p class=\"delete\">Удалить</p>\n" +
         "        </th>\n" +
         "    </tr>"
     return div.firstChild
@@ -121,8 +121,8 @@ function createAjaxQuery(path, contact, toFunction){
 
 
 function addListener(){
-    const contact = document.querySelectorAll(".fa-trash")
-    const change = document.querySelectorAll(".fa-wrench")
+    const contact = document.querySelectorAll(".delete")
+    const change = document.querySelectorAll(".change")
     for (let i = 0; i < contact.length; i++){
         contact[i].addEventListener('click', deleteContact)
         change[i].addEventListener('click', tryChangeContact)
